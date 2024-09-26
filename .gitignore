@@ -1,2 +1,4 @@
 Music/
 .venv/
+__pycache__/
+Source/__pycache__/
