@@ -11,9 +11,17 @@ Let me know which editors you want to be added!
 
 # Linux 
 
-If you are on Linux, you can also copy the timer.sh file into the /bin directory (you can also rename it to timer). 
-Then you have to modify the path in the timer file to cd to your "timer" folder location. 
-Now you should be able to directly type the command "timer" (or "timer.sh" if you have not renamed it) into your terminal.
+If you are on Linux, you can also copy the timer.sh file into the /bin directory. 
+Before copying it you should rename the file to something like "timer", so the command will later be "timer" and not "timer.sh".  
+Then you have to modify the path from the "timer" script (originally timer.sh) to cd to your "Timer" folder location. 
+
+
+This is an example of how your file could look like:
+cd /home/*your_username/folder/location*/Source/
+python main.py
+
+
+Now you should be able to directly type the command "timer" into your terminal.
 (This is just experimental!)
 
 # Requirements
