@@ -9,7 +9,7 @@ pygame.init()
 stop = 0
 
 #amount of time is being set
-delay = float(input("Minuten: "))
+delay = float(input("Minutes: "))
 delay = delay * 60
 unix_time_diff = time.time() + delay
 current_time = time.time()
