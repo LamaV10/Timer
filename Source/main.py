@@ -19,6 +19,7 @@ run = True
 while run:
     # music import/play
     current_time = time.time()
+    printTime = unix_time_diff - current_time
 
     if current_time > unix_time_diff:
         music.music()
@@ -29,4 +30,8 @@ while run:
     if stop == 1:
         run = False 
     
-    print(unix_time_diff - current_time)
+    if printTime <= 60:
+        print(printTime, "s")
+
+    if printTime > 60:
+        print(printTime / 60, "min")
