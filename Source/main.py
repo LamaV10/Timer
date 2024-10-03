@@ -11,7 +11,7 @@ stop = 0
 #amount of time is being set
 userDelay = float(input("Minutes: "))
 delay = userDelay * 60
-unix_time_diff = time.time() + delay
+unix_time_diff = time.time() + delay 
 current_time = time.time()
 
 run = True 
@@ -34,10 +34,12 @@ while run:
         print(round(printSeconds, 1), "s")
 
     if leftoverTime > 60:
-        print(round(printMinutes), printSeconds - secondsFromMinutes, "min")
+        # print(math.trunc(printMinutes), printSeconds - 60, "min")
+        print(math.trunc(printMinutes),":", round(printSeconds - secondsFromMinutes), "min")
 
     if printSeconds - secondsFromMinutes < 0:
         userDelay = userDelay - 1
+        print(userDelay)
 
     if stop == 1:
         run = False 
