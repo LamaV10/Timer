@@ -32,7 +32,7 @@ while run:
     leftoverTime = unix_time_diff - current_time
     printMinutes = leftoverTime / 60
     printSeconds = unix_time_diff - current_time
-    secondsFromMinutes = round(userDelay) * 60
+    secondsFromMinutes = math.trunc(userDelay) * 60
 
     if current_time > unix_time_diff:
         music.music()
