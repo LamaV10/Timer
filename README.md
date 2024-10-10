@@ -21,7 +21,7 @@ This is an example of how your file could look like:
 cd /home/*your_username/folder/location*/Source/
 python main.py
 
-
+Dont forget to make the script executable with chmod!
 Now you should be able to directly type the command "timer" into your terminal.
 (This is just experimental! I also tried it on MacOS but when trying to copy it into /bin I get the error "read file-system only".)
 
