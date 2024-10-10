@@ -28,4 +28,4 @@ Now you should be able to directly type the command "timer" into your terminal.
 # Requirements
 
 - Python with the dependencies from requirements.txt installed
-- Bash to execute the scripts
+- Bash to execute the scripts (but it's also possible to do it all manually)
