@@ -23,7 +23,7 @@ python main.py
 
 Dont forget to make the script executable with chmod!
 Now you should be able to directly type the command "timer" into your terminal.
-(This is just experimental! Maybe it's also possible on MacOS.)
+(This is just experimental! It may be also possible on MacOS.)
 
 # Requirements
 
