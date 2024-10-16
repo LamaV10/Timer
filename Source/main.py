@@ -8,44 +8,54 @@ from pygame import mixer
 pygame.init()
 
 def delete_last_line():
-    #cursor up one line
+    # Cursor up one line.
     sys.stdout.write('\x1b[1A')
 
-    #delete last line
+    # Delete last line.
     sys.stdout.write('\x1b[2K')
 
 stop = 0
-#amount of time is being set
+# Amount of time is being set.
 userDelay = float(input("Minutes: "))
+# Full minutes that are left over.
+fullMinutes = math.trunc(userDelay)
+# From minutes into seconds.
 delay = userDelay * 60
+# Unix time + the delay the user wants.
 unix_time_diff = time.time() + delay 
-current_time = time.time()
 
 run = True 
 while run:
-    # music import/play
+    # current unix time
     current_time = time.time()
 
+    # Left over time between unix time and the desiered user time. 
     leftoverTime = unix_time_diff - current_time
-    printMinutes = leftoverTime / 60
+    # Minutes that are left over rounded down! 
+    printMinutes = math.trunc(leftoverTime / 60)
+    # Total seconds that are left over
     printSeconds = unix_time_diff - current_time
-    secondsFromMinutes = math.trunc(userDelay) * 60
+    # Minutes rounded down & multiplied by 60 to get the seconds from the full minutes. This is being subtracted from the total seconds to get the leftover seconds in a minute.  
+    secondsFromMinutes = (printSeconds - (fullMinutes * 60))
 
     if current_time >= unix_time_diff:
         music.music()
 
     if current_time >= unix_time_diff:
         stop = int(input("Type 1 and press enter to stop the timer: "))
-    
+   
+    # Prints seconds if the there are no more full minutes. 
     if leftoverTime <= 60:
         print(round(printSeconds, 1), "s")
         delete_last_line()
 
+    # Prints minutes and seconds (min : sec) when there are still full minutes.
     if leftoverTime > 60:
-        print(math.trunc(printMinutes),":", round(printSeconds - secondsFromMinutes), "min",)
+        print((printMinutes),":", (secondsFromMinutes), "min",)
         delete_last_line()
 
-    if printSeconds - secondsFromMinutes < 0:
+    
+    if secondsFromMinutes =< 0:
         userDelay = userDelay - 1
 
     if stop == 1:
