@@ -31,10 +31,10 @@ while run:
     printSeconds = unix_time_diff - current_time
     secondsFromMinutes = math.trunc(userDelay) * 60
 
-    if current_time > unix_time_diff:
+    if current_time >= unix_time_diff:
         music.music()
 
-    if current_time > unix_time_diff:
+    if current_time >= unix_time_diff:
         stop = int(input("Type 1 and press enter to stop the timer: "))
     
     if leftoverTime <= 60:
