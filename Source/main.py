@@ -7,17 +7,14 @@ from pygame import mixer
 
 pygame.init()
 
-stop = 0
-
 def delete_last_line():
-    "Use this function to delete the last line in the STDOUT"
-
     #cursor up one line
     sys.stdout.write('\x1b[1A')
 
     #delete last line
     sys.stdout.write('\x1b[2K')
 
+stop = 0
 #amount of time is being set
 userDelay = float(input("Minutes: "))
 delay = userDelay * 60
@@ -34,10 +31,10 @@ while run:
     printSeconds = unix_time_diff - current_time
     secondsFromMinutes = math.trunc(userDelay) * 60
 
-    if current_time > unix_time_diff:
+    if current_time >= unix_time_diff:
         music.music()
 
-    if current_time > unix_time_diff:
+    if current_time >= unix_time_diff:
         stop = int(input("Type 1 and press enter to stop the timer: "))
     
     if leftoverTime <= 60:

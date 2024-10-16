@@ -21,11 +21,11 @@ This is an example of how your file could look like:
 cd /home/*your_username/folder/location*/Source/
 python main.py
 
-
+Dont forget to make the script executable with chmod!
 Now you should be able to directly type the command "timer" into your terminal.
-(This is just experimental!)
+(This is just experimental! It may be also possible on MacOS.)
 
 # Requirements
 
 - Python with the dependencies from requirements.txt installed
-- Bash to execute the scripts
+- Bash to execute the scripts (but it's also possible to do it all manually)
