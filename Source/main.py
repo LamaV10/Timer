@@ -31,11 +31,11 @@ while run:
 
     # Left over time between unix time and the desiered user time. 
     leftoverTime = unix_time_wanted - current_time
-    # Minutes that are left over rounded down! 
+    # Minutes that are left over rounded down to have no decimel places! 
     printMinutes = math.trunc(leftoverTime / 60)
-    # Total seconds that are left over
+    # Total seconds that are left over.
     printSeconds = unix_time_wanted - current_time
-    # Minutes rounded down & multiplied by 60 to get the seconds from the full minutes. This is being subtracted from the total seconds to get the leftover seconds in a minute.  
+    # Minutes rounded down & multiplied by 60 to get the seconds from the full minutes. This is being subtracted from the total seconds to get the leftover seconds from the current minute.  
     secondsFromMinutes = (math.trunc(printSeconds)- (fullMinutes * 60))
 
     if current_time >= unix_time_wanted:
@@ -44,17 +44,17 @@ while run:
     if current_time >= unix_time_wanted:
         stop = int(input("Type 1 and press enter to stop the timer: "))
    
-    # Prints seconds if the there are no more full minutes. 
+    # Prints seconds if the there are no more full minutes left. 
     if leftoverTime <= 60:
         print(round(printSeconds, 1), "s")
         delete_last_line()
 
-    # Prints minutes and seconds (min : sec) when there are still full minutes.
+    # Prints minutes and seconds (min : sec) when there are still full minutes left.
     if leftoverTime > 60:
         print((printMinutes),":", (secondsFromMinutes), "min",)
         delete_last_line()
 
-    # When a minute is down this fullMinutes variable is being subtracted by 1. This is important for the secondsFromMinutes calculation!
+    # When a full minute is up this fullMinutes variable is being subtracted by 1. This is important for the secondsFromMinutes calculation!
     if secondsFromMinutes < 0:
         fullMinutes -= 1 
 
