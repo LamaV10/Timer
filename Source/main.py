@@ -22,7 +22,7 @@ fullMinutes = math.trunc(userDelay)
 # From minutes into seconds.
 delay = userDelay * 60
 # Unix time + the delay the user wants.
-unix_time_diff = time.time() + delay 
+unix_time_wanted = time.time() + delay 
 
 run = True 
 while run:
@@ -30,18 +30,18 @@ while run:
     current_time = time.time()
 
     # Left over time between unix time and the desiered user time. 
-    leftoverTime = unix_time_diff - current_time
+    leftoverTime = unix_time_wanted - current_time
     # Minutes that are left over rounded down! 
     printMinutes = math.trunc(leftoverTime / 60)
     # Total seconds that are left over
-    printSeconds = unix_time_diff - current_time
+    printSeconds = unix_time_wanted - current_time
     # Minutes rounded down & multiplied by 60 to get the seconds from the full minutes. This is being subtracted from the total seconds to get the leftover seconds in a minute.  
-    secondsFromMinutes = (printSeconds - (fullMinutes * 60))
+    secondsFromMinutes = (math.trunc(printSeconds)- (fullMinutes * 60))
 
-    if current_time >= unix_time_diff:
+    if current_time >= unix_time_wanted:
         music.music()
 
-    if current_time >= unix_time_diff:
+    if current_time >= unix_time_wanted:
         stop = int(input("Type 1 and press enter to stop the timer: "))
    
     # Prints seconds if the there are no more full minutes. 
@@ -54,9 +54,9 @@ while run:
         print((printMinutes),":", (secondsFromMinutes), "min",)
         delete_last_line()
 
-    
-    if secondsFromMinutes =< 0:
-        userDelay = userDelay - 1
+    # When a minute is down this fullMinutes variable is being subtracted by 1. This is important for the secondsFromMinutes calculation!
+    if secondsFromMinutes < 0:
+        fullMinutes -= 1 
 
     if stop == 1:
         run = False 
