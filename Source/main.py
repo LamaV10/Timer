@@ -38,8 +38,6 @@ while run:
 
     if current_time >= unix_time_wanted:
         music.music()
-
-    if current_time >= unix_time_wanted:
         stop = int(input("Type 1 and press enter to stop the timer: "))
    
     # Prints seconds if the there are no more full minutes left. 
@@ -48,7 +46,7 @@ while run:
         delete_last_line()
 
     # Prints minutes and seconds (min : sec) when there are still full minutes left.
-    if leftoverTime > 60:
+    elif leftoverTime > 60:
         print((printMinutes),":", (secondsFromMinutes), "min",)
         delete_last_line()
 
