@@ -4,24 +4,33 @@ This is a really simple timer written in python. After a given time it will play
 
 # Usage
 
-In order to have working music you have to create a folder named "Music" inside of "Source/" and then put your music in there (mp3, WAV).
-After that you can execute the setup.sh script and choose "1", which will bring you to the module responsible for the music (music.py) after you have choosen your editor.
-Neovim, Vim, Nano and Vscode/ium are supported in this script.
-Let me know which editors you want to be added!
-Now you can put your titel into the line 7.
+In order to setup Music just execute the setup.sh script and choose the first option. 
+Then you can enter the location of your music file: 
+```
+# Execute script
+./setup.sh
+# Option 1 
+1
+# location of your music title 
+/home/USER/Music/Your_Title.mp3
+```
 
 # Linux 
 
 If you are on Linux, you can also copy the timer.sh file into the /bin directory. 
 Before copying it you should rename the file to something like "timer", so the command will later be "timer" and not "timer.sh".  
-Then you have to modify the path from the "timer" script (originally timer.sh) to cd to your "Timer" folder location. 
 
+Execute the setup.sh file and choose the second option. Your file should look like this afterwards: 
 
-This is an example of how your file could look like:
-cd /home/*your_username/folder/location*/Source/
+```
+cd /home/*your_username/folder/location*/Timer/Source/
 python main.py
+```
 
-Dont forget to make the script executable with chmod!
+Dont forget to make the script executable before copying it into /bin!
+```
+chmod +x timer
+```
 Now you should be able to directly type the command "timer" into your terminal.
 (This is just experimental! It may be also possible on MacOS.)
 
