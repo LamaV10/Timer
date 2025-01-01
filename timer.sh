@@ -1,2 +1,2 @@
-cd Source/
+cd /Source
 python main.py

@@ -29,5 +29,5 @@ if [ $modify -eq 2 ]; then
   echo "cd $path/Source
 python main.py" > timer.sh
 
-  echo "The path was setup. You can now copy this script into your /bin directory for easier acces!"
+  echo "The path is setup. You can copy this script into your /bin directory for easier acces now!"
 fi
