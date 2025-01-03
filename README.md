@@ -32,7 +32,7 @@ Dont forget to make the script executable before copying it into /bin!
 chmod +x timer
 ```
 Now you should be able to directly type the command "timer" into your terminal.
-(This is just experimental! It may be also possible on MacOS.)
+(This is just experimental! It may be also possible on MacOS. Execute at your own RISK!!!)
 
 # Requirements
 
