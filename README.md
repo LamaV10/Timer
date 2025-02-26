@@ -27,14 +27,17 @@ cd /home/*your_username/folder/location*/Timer/Source/
 python main.py
 ```
 
-Dont forget to make the script executable before copying it into /bin!
+Don't forget to make the script executable before copying it into /bin!
 ```
 chmod +x timer
 ```
 Now you should be able to directly type the command "timer" into your terminal.
-(This is just experimental! It may be also possible on MacOS. Execute at your own RISK!!!)
+Disclaimer: This is just experimental for Linux (may also work on MacOS or other UNIX like systems), do at your own risk!
 
 # Requirements
 
 - Python with the dependencies from requirements.txt installed
+```
+pip install -r requirements.txt
+```
 - Bash to execute the scripts (but it's also possible to do it all manually)
