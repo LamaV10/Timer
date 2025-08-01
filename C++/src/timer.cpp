@@ -10,6 +10,21 @@ void audioInit();
 void playAudio();
 
 using namespace std;
+void printTime(int time, int currUnixTime){
+    int timeLeft;
+    int timeLeftMin;
+    int secondsOfCurrMinuts;
+    timeLeft = time - currUnixTime;
+    timeLeftMin = timeLeft / 60;
+    secondsOfCurrMinuts = timeLeft - ((timeLeft / 60) * 60);
+
+    if(timeLeft > 60){
+	cout << "\r" << timeLeftMin << ":" << secondsOfCurrMinuts << " " <<std::flush;
+    } else {
+	cout << "\r" << timeLeft << " " <<std::flush;
+    }
+}
+
 int main(){
     audioInit();
     const auto p1 = std::chrono::system_clock::now();
@@ -27,7 +42,7 @@ int main(){
 	    playAudio();
 	    run = false;
 	}
-	cout << "\r" << time - currUnixTime << "     " <<std::flush;
+	printTime(time, currUnixTime);
 	currUnixTime++;
 	sleep(1);
     }
