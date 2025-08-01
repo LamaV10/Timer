@@ -13,7 +13,7 @@ void audioInit(){
 
 void playAudio(){
     mpg123_handle *mh = mpg123_new(NULL, NULL);
-    mpg123_open(mh, /home/lama/Music/Alt-Rap/'Larry June, The Alchemist - 60 Days.mp3');
+    mpg123_open(mh, "/home/marcel/Music/Alt-Rap/Larry June, The Alchemist - 60 Days.mp3");
 
     // set up audio output
     long rate; // Declare rate

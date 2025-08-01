@@ -41,7 +41,9 @@ Now you should be able to directly type the command "timer" into your terminal.
 
 
 # Timer C++
-A way more lightweight version of timer. Basic functionalities are already implementd. Currently the C++ version only works on linux.
+A way more lightweight version of timer. The Python version almost consumes 10% of cpu on my main machine (Ryzen 5 5600) and upto 30% on potatos like my T430u.
+
+Basic functionalities are already implementd. Currently the C++ version only works on linux.
 
 ## Build
 Dependencies:
@@ -49,7 +51,7 @@ Dependencies:
 
 Compile the with a binary called timer:
 ```
-g++ -o timer timer.cpp -lmpg123 -lao
+g++ -o timer timer.cpp music.cpp -lmpg123 -lao
 ```
 Execute:
 ```
