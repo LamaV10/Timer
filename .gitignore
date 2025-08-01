@@ -1,6 +1,4 @@
-Source/Music/
-Music/
-.venv/
-__pycache__/
-Source/__pycache__/
+Archiv/Source/Music/
+Archiv/Source/__pycache__/
 timer
+.ccls-cache
