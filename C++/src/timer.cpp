@@ -23,10 +23,11 @@ int main(){
     bool run = true;
     while(run){
 	if(currUnixTime == time || currUnixTime > time){
-	    cout << "Time is over! Press control + c to quit." << "\n";
+	    cout << "\n" << "Time is over! Press control + c to quit." << "\n";
 	    playAudio();
 	    run = false;
 	}
+	cout << "\r" << time - currUnixTime << "     " <<std::flush;
 	currUnixTime++;
 	sleep(1);
     }
