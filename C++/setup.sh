@@ -54,3 +54,5 @@ void playAudio(){
 }
 " > music.cpp
 fi
+
+echo "Now you can execute the binary!"
