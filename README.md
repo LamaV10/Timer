@@ -1,8 +1,8 @@
-# Timer
+# Timer Python
 
 This is a really simple timer written in python. After a given time it will play your music. 
 
-# Usage
+## Usage
 
 In order to setup Music just execute the setup.sh script and choose the first option. 
 Then you can enter the location of your music file: 
@@ -15,7 +15,7 @@ Then you can enter the location of your music file:
 /home/USER/Music/Your_Title.mp3
 ```
 
-# Linux 
+## Linux 
 
 If you are on Linux, you can also copy the timer.sh file into the /bin directory. 
 Before copying it you should rename the file to something like "timer", so the command will later be "timer" and not "timer.sh".  
@@ -34,7 +34,24 @@ chmod +x timer
 Now you should be able to directly type the command "timer" into your terminal.
 (This is just experimental! It may be also possible on MacOS. Execute at your own RISK!!!)
 
-# Requirements
+## Requirements
 
 - Python with the dependencies from requirements.txt installed
 - Bash to execute the scripts (but it's also possible to do it all manually)
+
+
+# Timer C++
+A way more lightweight version of timer. Basic functionalities are already implementd. Currently the C++ version only works on linux.
+
+## Build
+Dependencies:
+- libmpg123
+
+Compile the with a binary called timer:
+```
+g++ -o timer timer.cpp -lmpg123 -lao
+```
+Execute:
+```
+./timer
+```
