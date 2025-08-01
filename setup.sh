@@ -1,13 +1,7 @@
-echo "What do you want to setup?"
-echo "Wich Song is going to be played (1) or path of the Timer-folder in timer.sh (2):"
-read modify
+echo "Please enter the location of your music file: "
+read musicLocation
 
-
-if [ $modify -eq 1 ]; then
-  echo "Please enter the location of your music file: "
-  read musicLocation
-
-  cd src/
+cd src/
 echo "// #include "timer.cpp"
 #include <ctime>
 #include <chrono>
@@ -59,14 +53,4 @@ void playAudio(){
     ao_shutdown();
 }
 " > music.cpp
-fi
-
-
-if [ $modify -eq 2 ]; then
-  path="$(pwd)" 
-
-  echo "cd $path/src
-python main.py" > timer.sh
-
-  echo "The path was setup. You can now copy this script into your /bin directory for easier acces!"
 fi
