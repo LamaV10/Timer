@@ -18,7 +18,7 @@ void printTime(int time, int currUnixTime){
     timeLeftMin = timeLeft / 60;
     secondsOfCurrMinuts = timeLeft - ((timeLeft / 60) * 60);
 
-    if(secondsOfCurrMinuts < 10){
+    if(secondsOfCurrMinuts < 10 && timeLeftMin > 1){
 	cout << "\r" << timeLeftMin << " : 0" << secondsOfCurrMinuts << " min" << "  " <<std::flush;
     } else if(timeLeft > 60){
 	cout << "\r" << timeLeftMin << " : " << secondsOfCurrMinuts << " min" << "  " <<std::flush;
@@ -44,8 +44,8 @@ int main(){
 	    playAudio();
 	    run = false;
 	}
-	printTime(time, currUnixTime);
 	currUnixTime++;
+	printTime(time, currUnixTime);
 	sleep(1);
     }
 }
