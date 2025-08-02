@@ -56,6 +56,7 @@ while run:
 
     if stop == 1:
         run = False
+
     time.sleep(0.1)
 
 
