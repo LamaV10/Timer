@@ -18,7 +18,7 @@ void printTime(int time, int currUnixTime){
     timeLeftMin = timeLeft / 60;
     secondsOfCurrMinuts = timeLeft - ((timeLeft / 60) * 60);
 
-    if(secondsOfCurrMinuts < 10 && timeLeftMin > 1){
+    if(secondsOfCurrMinuts < 10 && timeLeftMin >= 1){
 	cout << "\r" << timeLeftMin << " : 0" << secondsOfCurrMinuts << " min" << "  " <<std::flush;
     } else if(timeLeft > 60){
 	cout << "\r" << timeLeftMin << " : " << secondsOfCurrMinuts << " min" << "  " <<std::flush;
@@ -32,10 +32,10 @@ int main(){
     const auto p1 = std::chrono::system_clock::now();
     auto currUnixTime = std::chrono::duration_cast<std::chrono::seconds>(p1.time_since_epoch()).count();
 
-    int time;
+    double time;
     cout << "Minutes: ";
     cin >> time;
-    time = (time * 60) + currUnixTime;
+    time = double(time * 60.0) + double(currUnixTime);
 
     bool run = true;
     while(run){

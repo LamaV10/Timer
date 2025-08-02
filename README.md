@@ -43,7 +43,7 @@ Now you should be able to directly type the command "timer" into your terminal.
 # Timer C++
 A way more lightweight version of timer. The python version was optimized but still consumes 50MBs of memory and loads slower.
 
-Basic functionalities are already implementd. Currently the C++ version only works on linux.
+Basic functionalities are already implementd. Currently the C++ version only works on UNIX like systems.
 
 ## Build
 Dependencies:
