@@ -18,10 +18,12 @@ void printTime(int time, int currUnixTime){
     timeLeftMin = timeLeft / 60;
     secondsOfCurrMinuts = timeLeft - ((timeLeft / 60) * 60);
 
-    if(timeLeft > 60){
+    if(secondsOfCurrMinuts < 10){
+	cout << "\r" << timeLeftMin << ":0" << secondsOfCurrMinuts << " " <<std::flush;
+    } else if(timeLeft > 60){
 	cout << "\r" << timeLeftMin << ":" << secondsOfCurrMinuts << " " <<std::flush;
     } else {
-	cout << "\r" << timeLeft << " " <<std::flush;
+	cout << "\r" << timeLeft << "   " <<std::flush;
     }
 }
 
