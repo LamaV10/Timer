@@ -50,6 +50,15 @@ Dependencies:
 - libmpg123
 - libao
 
+Arch:
+```
+sudo pacman -S libao mpg123
+```
+Brew:
+```
+brew install mpg123 libao
+```
+
 Compile the with a binary called timer:
 ```
 g++ -o timer timer.cpp music.cpp -lmpg123 -lao
